@@ -8,3 +8,13 @@ We design the UF (Unweighted Fusion) block and CWF (Complementary Weighted Fusio
 
 Decription of files
 -----
+>lanms/                      A C++ version of NMS
+>nets/
+>>resnet_utils.py            Contains building blocks for various versions of Residual Networks
+>>resnet_v1.py               Resnet V1 model implemented with [Slim](https://github.com/tensorflow/models/tree/master/research/slim)
+>>vgg.py                     VGG model implemented with [Slim](https://github.com/tensorflow/models/tree/master/research/slim)
+>data_util.py                A base data generator
+>image_augmentation.py       Various image augmentation methods
+>multigpu_train
+>eval_all_ckpt_*.py          Evaluate the correspoding models
+>
