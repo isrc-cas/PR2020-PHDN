@@ -7,7 +7,7 @@ A new Scale Invariant Fully Convolutional Network (SIFCN) trained in an end-to-e
 We design the UF (Unweighted Fusion) block and CWF (Complementary Weighted Fusion) block to fuse features of multiple layers efficiently.
 
 ### Citation
-If you use our code or models, please cite our paper.
+If you use our code or models, please cite our paper.  
 	@
 
 Decription of files
@@ -34,7 +34,7 @@ Decription of files
 
 Installation
 ------
-Tensorflow > 1.0
+Tensorflow > 1.0  
 python3
 
 Download
