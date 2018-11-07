@@ -2,9 +2,8 @@ Scale Invariant Fully Convolutional Network: Detecting Hands Efficiently
 =====
 Introduction
 -----
-This is a tensorflow implementation of Scale Invariant Fully Convolutional Network: Detecting Hands Efficiently. 
-A new Scale Invariant Fully Convolutional Network (SIFCN) trained in an end-to-end fashion is proposed to detect hands efficiently.
-We design the UF (Unweighted Fusion) block and CWF (Complementary Weighted Fusion) block to fuse features of multiple layers efficiently.
+This is a tensorflow implementation of Scale Invariant Fully Convolutional Network: Detecting Hands Efficiently.  
+A new Scale Invariant Fully Convolutional Network (SIFCN) trained in an end-to-end fashion is proposed to detect hands efficiently.We design the UF (Unweighted Fusion) block and CWF (Complementary Weighted Fusion) block to fuse features of multiple layers efficiently. The SIFCN architecture with VGG16 backbone: ![arch](images/arch.png)
 
 ### Citation
 If you use our code or models, please cite our paper.  
@@ -45,3 +44,4 @@ Download
 		[VIVA Hand Dataset](http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection) 
 	Pretrained model: 
 		You can download from the [slim](https://github.com/tensorflow/models/tree/master/research/slim) page.
+
