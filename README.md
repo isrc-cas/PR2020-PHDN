@@ -45,3 +45,15 @@ Download
 **Pretrained model**: 
 You can download from the [slim](https://github.com/tensorflow/models/tree/master/research/slim) page.  
 
+Train
+-----
+
+
+Test
+-----
+
+
+Troubleshooting
+-----
+* 
+	* 
