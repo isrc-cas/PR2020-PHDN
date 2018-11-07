@@ -16,8 +16,8 @@ tf.app.flags.DEFINE_integer('save_checkpoint_steps', 2000, '')
 tf.app.flags.DEFINE_integer('save_summary_steps', 2000, '')
 tf.app.flags.DEFINE_string('pretrained_model_path', '../model/resnet50/resnet_v1_50.ckpt', '')
 
-import resnet_v1_model_dice_multi_alpha_p5 as model
-import oxford_R01 as data_processor
+import resnet_v1_model_dice_multi as model
+import oxford as data_processor
 
 FLAGS = tf.app.flags.FLAGS
 

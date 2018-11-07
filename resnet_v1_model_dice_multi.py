@@ -6,7 +6,6 @@ from tensorflow.contrib import slim
 tf.app.flags.DEFINE_integer('hand_scale', 512, '')
 
 from nets import resnet_v1
-from focal_loss import *
 
 FLAGS = tf.app.flags.FLAGS
 

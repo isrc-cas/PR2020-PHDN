@@ -18,7 +18,7 @@ tf.app.flags.DEFINE_string('pretrained_model_path', '../model/vgg16/vgg_16.ckpt'
 # tf.app.flags.DEFINE_string('pretrained_model_path', None, '')
 
 import vgg16_model_dice_multi as model
-import oxford_R01 as data_processor
+import oxford as data_processor
 
 FLAGS = tf.app.flags.FLAGS
 

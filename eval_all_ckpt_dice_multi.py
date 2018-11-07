@@ -16,7 +16,7 @@ tf.app.flags.DEFINE_string('heatmap_output_dir', '../result/oxford-test-result/h
 tf.app.flags.DEFINE_bool('no_write_images', False, 'do not write images')
 
 import resnet_v1_model_dice_multi as model
-from oxford_R01 import restore_rectangle
+from oxford import restore_rectangle
 
 FLAGS = tf.app.flags.FLAGS
 CKPT_PATH = None#'../model/hand_resnet_v1_50_dice_multi_oxford_aug_rbox/model.ckpt-98051'#
@@ -32,12 +32,6 @@ def get_images():
     '''
     files = []
     exts = ['jpg', 'png', 'jpeg', 'JPG']
-    # for parent, dirnames, filenames in os.walk(FLAGS.test_data_path):
-    #     for filename in filenames:
-    #         for ext in exts:
-    #             if filename.endswith(ext):
-    #                 files.append(os.path.join(parent, filename))
-    #                 break
     for ext in exts:
         files += glob.glob(os.path.join(FLAGS.test_data_path, '*.' + ext))
     print('Find {} images'.format(len(files)))
@@ -103,36 +97,7 @@ def detect(im_fn, im, ratio_h, ratio_w, score_map, geo_map, timer, score_map_thr
     # updated
     # resize_score_map = cv2.resize(score_map, (score_map.shape[1]*4, score_map.shape[0]*4))
     # cv2.imwrite(FLAGS.heatmap_output_dir+os.path.basename(im_fn)[:-4]+'_heatmap.png', resize_score_map*255)
-    # #generate the heatmap
-    # xy_text_0 = np.argwhere(score_map >= 0)
-    # # sort the text boxes via the y axis
-    # xy_text_0 = xy_text_0[np.argsort(xy_text_0[:, 0])]
-    # # restore
-    # text_box_restored_0 = restore_rectangle(xy_text_0[:, ::-1]*4, geo_map[xy_text_0[:, 0], xy_text_0[:, 1], :])
-    # boxes_0 = np.zeros((text_box_restored_0.shape[0], 9), dtype=np.float32)
-    # boxes_0[:, :8] = np.clip(text_box_restored_0.reshape((-1, 8)), 0, max(score_map.shape[0]*4, score_map.shape[1]*4))
-    # boxes_0[:, 8] = score_map[xy_text_0[:, 0], xy_text_0[:, 1]]
-    # # mask_0 = np.zeros((score_map.shape[0]*4, score_map.shape[1]*4), dtype=np.float32)
-    # # overlap_count = np.zeros((score_map.shape[0]*4, score_map.shape[1]*4))
-    # heatmap = {}
-    # heatmap["image_name"] = os.path.basename(im_fn)
-    # bboxes = []
-    # if boxes_0 is not None:
-    #     for box_0 in boxes_0:
-    #         if round(box_0[8], 6) > 0:
-    #             pos = box_0[:8].reshape((4, 2))
-    #             pos[:, 0] /= ratio_w
-    #             pos[:, 1] /= ratio_h
-    #             pos = sort_poly(pos.astype(np.int32))
-    #             # print pos[0, 1], pos[2, 1], pos[0, 0], pos[2, 0]
-    #             bboxes.append({"bbox":list([int(pos[0, 0]), int(pos[0, 1]), int(pos[2, 0]), int(pos[2, 1])]), "score":round(box_0[8], 6)})
-    #             # mask_0[pos[0, 1]:pos[2, 1], pos[0, 0]:pos[2, 0]] += box_0[8]
-    #             # overlap_count[pos[0, 1]:pos[2, 1], pos[0, 0]:pos[2, 0]] += 1
-    # heatmap["bboxes"] = bboxes
-    # heatmaps.append(heatmap)
-    # final_heat_map = np.true_divide(mask_0, overlap_count)
-    # cv2.imwrite(FLAGS.heatmap_output_dir+os.path.basename(im_fn)[:-4]+'_heatmap.png', final_heat_map*255)
-
+    
     # filter the score map
     xy_text = np.argwhere(score_map > score_map_thresh)
     # sort the text boxes via the y axis
