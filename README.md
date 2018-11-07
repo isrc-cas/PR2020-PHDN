@@ -6,9 +6,13 @@ This is a tensorflow implementation of Scale Invariant Fully Convolutional Netwo
 A new Scale Invariant Fully Convolutional Network (SIFCN) trained in an end-to-end fashion is proposed to detect hands efficiently.
 We design the UF (Unweighted Fusion) block and CWF (Complementary Weighted Fusion) block to fuse features of multiple layers efficiently.
 
+### Citation
+If you use our code or models, please cite our paper.
+	@
+
 Decription of files
 -----
-|file|discription|
+|file/directory|discription|
 |--------|--------|
 |lanms/                |A C++ version of NMS|
 |nets/                 |Contains Resnet V1 model and VGG16 model|
@@ -27,3 +31,17 @@ Decription of files
 |eval_all_ckpt_dice_multi_weighted_fusion.py		  |Evaluate ResNet50+CWF+Multi-Scale Loss|
 |eval_all_ckpt_vgg16_dice_multi.py					  |Evaluate VGG16+UF+Multi-Scale Loss|
 |eval_all_ckpt_vgg16_dice_multi_weighted_fusion.py	  |Evaluate VGG16+CWF+Multi-Scale Loss|
+
+Installation
+------
+Tensorflow > 1.0
+python3
+
+Download
+-----
+	Data preparing: 
+		[Oxford Hand Dataset](http://www.robots.ox.ac.uk/~vgg/data/hands/index.html)
+		[VIVA Hand Dataset](http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection/)
+
+	Pretrained model: 
+		You can download from the [slim](https://github.com/tensorflow/models/tree/master/research/slim) page.
