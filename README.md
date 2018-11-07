@@ -10,20 +10,20 @@ Decription of files
 -----
 |file|discription|
 |--------|--------|
-|lanms/|A C++ version of NMS|
-|nets/|Contains Resnet V1 and VGG16 model
-　resnet_utils.py
-　　　　　　　　　　　　　　　Contains building blocks for various versions of Residual Networks<br>
-　resnet_v1.py
-　　　　　　　　　　　　　　　Resnet V1 model implemented with [Slim](https://github.com/tensorflow/models/tree/master/research/slim)<br>
-　vgg.py　　　　　　　　　　　　　　VGG model implemented with [Slim](https://github.com/tensorflow/models/tree/master/research/slim)<br>
->data_util.py　　　　　　　　　　　　　A base data generator<br>
->oxford_R01.py　　　　　　　　　　　　Data processor for Oxford dataset<br>
->VIVA_R01.py　　　　　　　　　　　　　Data processor for VIVA dataset<br>
->image_augmentation.py　　　　　　　　Various image augmentation methods<br>
->multigpu_train_*.py　　　　　　　　　Train models<br>
->eval_all_ckpt_*.py				Evaluate the correspoding models<br>
->resnet_v1_model_*.py			SIFCN with Resnet V1 50 as the backbone network<br>
->vgg16_model_*.py				SIFCN with VGG16 as the backbone network<br>
->*_multi*.py					The multi-scale loss discribed in the paper is used<br>
->*_weighted_fusion*.py			The CWF block is used．If not marked, the UF block is used as default<br>
+|lanms/                |A C++ version of NMS|
+|nets/                 |Contains Resnet V1 model and VGG16 model|
+|data_util.py          |A base data generator|
+|oxford.py　　　　　    |Data processor for Oxford dataset|
+|image_augmentation.py |Various image augmentation methods|
+|resnet_v1_model_dice_multi.py                        |ResNet50+UF+Multi-Scale Model|
+|resnet_v1_model_dice_multi_weighted_fusion.py        |ResNet50+CWF+Multi-Scale Model|
+|vgg16_model_dice_multi.py                            |VGG16+UF+Multi-Scale Model|
+|vgg16_model_dice_multi_weighted_fusion.py            |VGG16+CWF+Multi-Scale Model|
+|multigpu_train_dice_multi.py                         |Train ResNet50+UF+Multi-Scale Loss|
+|multigpu_train_dice_multi_weighted_fusion.py         |Train ResNet50+CWF+Multi-Scale Loss|
+|multigpu_train_vgg16_dice_multi.py                   |Train VGG16+UF+Multi-Scale Loss|
+|multigpu_train_vgg16_dice_multi_weighted_fusion.py   |Train VGG16+CWF+Multi-Scale Loss|
+|eval_all_ckpt_dice_multi.py						  |Evaluate ResNet50+UF+Multi-Scale Loss|
+|eval_all_ckpt_dice_multi_weighted_fusion.py		  |Evaluate ResNet50+CWF+Multi-Scale Loss|
+|eval_all_ckpt_vgg16_dice_multi.py					  |Evaluate VGG16+UF+Multi-Scale Loss|
+|eval_all_ckpt_vgg16_dice_multi_weighted_fusion.py	  |Evaluate VGG16+CWF+Multi-Scale Loss|
