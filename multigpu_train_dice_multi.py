@@ -7,17 +7,17 @@ tf.app.flags.DEFINE_integer('input_size', 512, '')
 tf.app.flags.DEFINE_integer('batch_size_per_gpu', 12, '')
 tf.app.flags.DEFINE_integer('num_readers', 16, '')
 tf.app.flags.DEFINE_float('learning_rate', 0.0001, '')
-tf.app.flags.DEFINE_integer('max_steps', 200000, '')
+tf.app.flags.DEFINE_integer('max_steps', 201000, '')
 tf.app.flags.DEFINE_float('moving_average_decay', 0.997, '')
 tf.app.flags.DEFINE_string('gpu_list', '1', '')
-tf.app.flags.DEFINE_string('checkpoint_path', '../model/hand_resnet_v1_50_dice_multi_aug_rbox_R01/', '')
+tf.app.flags.DEFINE_string('checkpoint_path', '/data/Diana/model/hand_resnet_v1_50_dice_multi_oxford_aug_rbox_alpha_p5/', '')
 tf.app.flags.DEFINE_boolean('restore', False, 'whether to resotre from checkpoint')
 tf.app.flags.DEFINE_integer('save_checkpoint_steps', 2000, '')
 tf.app.flags.DEFINE_integer('save_summary_steps', 2000, '')
 tf.app.flags.DEFINE_string('pretrained_model_path', '../model/resnet50/resnet_v1_50.ckpt', '')
 
-import resnet_v1_model_dice_multi as model
-import VIVA_R01 as data_processor
+import resnet_v1_model_dice_multi_alpha_p5 as model
+import oxford_R01 as data_processor
 
 FLAGS = tf.app.flags.FLAGS
 
