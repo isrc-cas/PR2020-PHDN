@@ -54,10 +54,8 @@ You can download the pre-trained Resnet V1 50 and VGG16 models from the [slim](h
 Train
 -----
 You can train the model with the following command:  
-	python multigpu_train_dice_multi.py --input_size=512 --batch_size_per_gpu=12 
-	--checkpoint_path=../model/hand_dice_multi_oxford_aug/ --training_data_path=../data/oxford/train/ 
-	--learning_rate=0.0001 --num_readers=16 --gpu_list=0 --restore=False 
-	--pretrained_model_path=../model/resnet50/resnet_v1_50.ckpt
+
+	python multigpu_train_dice_multi.py --input_size=512 --batch_size_per_gpu=12 --checkpoint_path=../model/hand_dice_multi_oxford_aug/ --training_data_path=../data/oxford/train/ 	--learning_rate=0.0001 --num_readers=16 --gpu_list=0 --restore=False --pretrained_model_path=../model/resnet50/resnet_v1_50.ckpt
 
 Test
 -----
