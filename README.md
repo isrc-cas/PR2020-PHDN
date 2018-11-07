@@ -8,9 +8,10 @@ We design the UF (Unweighted Fusion) block and CWF (Complementary Weighted Fusio
 
 Decription of files
 -----
->lanms/
-　　　　　　　　　　　　　　　A C++ version of NMS <br>
->nets/<br>
+|file|discription|
+|--------|--------|
+|lanms/|A C++ version of NMS|
+|nets/|Contains Resnet V1 and VGG16 model
 　resnet_utils.py
 　　　　　　　　　　　　　　　Contains building blocks for various versions of Residual Networks<br>
 　resnet_v1.py
@@ -25,4 +26,4 @@ Decription of files
 >resnet_v1_model_*.py			SIFCN with Resnet V1 50 as the backbone network<br>
 >vgg16_model_*.py				SIFCN with VGG16 as the backbone network<br>
 >*_multi*.py					The multi-scale loss discribed in the paper is used<br>
->*_weighted_fusion*.py			The CWF block is used<br>, if not marked, the UF block is used as default<br>
+>*_weighted_fusion*.py			The CWF block is used．If not marked, the UF block is used as default<br>
