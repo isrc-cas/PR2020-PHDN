@@ -41,17 +41,30 @@ Download
 -----
 **Data preparing**: [Oxford Hand Dataset](http://www.robots.ox.ac.uk/~vgg/data/hands), 
 [VIVA Hand Dataset](http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection)   
+The images and ground truths should be in the same directory. An example image and coresponding gound truth (.txt format):  
+![examples/VOC2010_1323.jpg](examples/VOC2010_1323.jpg)  
 
+	60,269,78,257,87,270,69,283,hand
+	118,244,130,245,128,260,116,259,hand
+Each line in the ground truth file indicates a hand bounding box. The eight numbers represents the *x* and *y* coordinates of the bounding box in clockwise starting from the upper left. The "hand" text represents the catagory, it is pointless when there is only one catagory.
 **Pretrained model**: 
 You can download from the [slim](https://github.com/tensorflow/models/tree/master/research/slim) page.  
 
 Train
 -----
-
+You can train the model with the following command:
+	python multigpu_train_dice_multi.py --input_size=512 --batch_size_per_gpu=12 \
+	--checkpoint_path=../model/hand_dice_multi_oxford_aug/ --training_data_path=../data/oxford/train/ \
+	--learning_rate=0.0001 --num_readers=16 --gpu_list=0 --restore=False \
+	--pretrained_model_path=../model/resnet50/resnet_v1_50.ckpt
 
 Test
 -----
-
+You can evaluate the model with the following command:
+	python eval_all_dice_multi.py --test_data_path=../data/Oxford/test/ --gpu_list=0 \
+	--checkpoint_path=../model/hand_dice_multi_oxford_aug/ --output_dir=../result/oxford-test-result/pos/ \
+	--heatmap_output_dir=../result/oxford-test-result/heatmaps_resenet_dice_multi_oxford/ \
+	--no_write_images=True
 
 Troubleshooting
 -----
