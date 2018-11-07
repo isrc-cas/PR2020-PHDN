@@ -46,16 +46,17 @@ The images and ground truths should be in the same directory. An example image a
 
 	60,269,78,257,87,270,69,283,hand
 	118,244,130,245,128,260,116,259,hand
-Each line in the ground truth file indicates a hand bounding box. The eight numbers represents the *x* and *y* coordinates of the bounding box in clockwise starting from the upper left. The "hand" text represents the catagory, it is pointless when there is only one catagory.
-**Pretrained model**: 
-You can download from the [slim](https://github.com/tensorflow/models/tree/master/research/slim) page.  
+Each line in the ground truth file indicates a hand bounding box. The eight numbers seperated by "," represent the *x* and *y* coordinates of the bounding box in clockwise starting from the upper left. The text "hand" represents the catagory, which is pointless when there is only one catagory.  
+
+**Pre-trained model**: 
+You can download the pre-trained Resnet V1 50 and VGG16 models from the [slim](https://github.com/tensorflow/models/tree/master/research/slim) page.  
 
 Train
 -----
-You can train the model with the following command:
-	python multigpu_train_dice_multi.py --input_size=512 --batch_size_per_gpu=12 \
-	--checkpoint_path=../model/hand_dice_multi_oxford_aug/ --training_data_path=../data/oxford/train/ \
-	--learning_rate=0.0001 --num_readers=16 --gpu_list=0 --restore=False \
+You can train the model with the following command:  
+	python multigpu_train_dice_multi.py --input_size=512 --batch_size_per_gpu=12 
+	--checkpoint_path=../model/hand_dice_multi_oxford_aug/ --training_data_path=../data/oxford/train/ 
+	--learning_rate=0.0001 --num_readers=16 --gpu_list=0 --restore=False 
 	--pretrained_model_path=../model/resnet50/resnet_v1_50.ckpt
 
 Test
