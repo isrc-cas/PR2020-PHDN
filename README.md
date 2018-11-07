@@ -41,10 +41,10 @@ Download
 -----
 ### Data preparing  
 
-[Oxford Hand Dataset](http://www.robots.ox.ac.uk/~vgg/data/hands), 
+[Oxford Hand Dataset](http://www.robots.ox.ac.uk/~vgg/data/hands)  
 [VIVA Hand Dataset](http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection)   
 
-The images and ground truths should be in the same directory. An example image and coresponding gound truth (.txt format):  
+The ground truths should be named exactly the same as the corresponding image such as *VOC2010_1323.jpg* and *VOC2010_1323.txt*. And you are supposed to put the images and ground truths in the same directory. An example image and coresponding gound truth:  
 
 ![examples/VOC2010_1323.jpg](examples/VOC2010_1323.jpg)  
 
