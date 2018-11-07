@@ -8,6 +8,7 @@ We design the UF (Unweighted Fusion) block and CWF (Complementary Weighted Fusio
 
 ### Citation
 If you use our code or models, please cite our paper.  
+
 	@
 
 Decription of files
@@ -40,8 +41,8 @@ python3
 Download
 -----
 	Data preparing: 
-		[Oxford Hand Dataset](http://www.robots.ox.ac.uk/~vgg/data/hands/index.html)
-		[VIVA Hand Dataset](http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection/)
+		[Oxford Hand Dataset]: http://www.robots.ox.ac.uk/~vgg/data/hands/index.html
+		[VIVA Hand Dataset]: http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection/
 
 	Pretrained model: 
-		You can download from the [slim](https://github.com/tensorflow/models/tree/master/research/slim) page.
+		You can download from the [slim]: https://github.com/tensorflow/models/tree/master/research/slim page.
