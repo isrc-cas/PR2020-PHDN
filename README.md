@@ -59,11 +59,9 @@ You can train the model with the following command:
 
 Test
 -----
-You can evaluate the model with the following command:
-	python eval_all_dice_multi.py --test_data_path=../data/Oxford/test/ --gpu_list=0 \
-	--checkpoint_path=../model/hand_dice_multi_oxford_aug/ --output_dir=../result/oxford-test-result/pos/ \
-	--heatmap_output_dir=../result/oxford-test-result/heatmaps_resenet_dice_multi_oxford/ \
-	--no_write_images=True
+You can evaluate the model with the following command:  
+
+	python eval_all_dice_multi.py --test_data_path=../data/Oxford/test/ --gpu_list=0 --checkpoint_path=../model/hand_dice_multi_oxford_aug/ --output_dir=../result/oxford-test-result/pos/ heatmap_output_dir=../result/oxford-test-result/heatmaps_resenet_dice_multi_oxford/ --no_write_images=True
 
 Troubleshooting
 -----
