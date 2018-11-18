@@ -15,8 +15,8 @@ tf.app.flags.DEFINE_string('output_dir', '../result/oxford-test-result/pos/', ''
 tf.app.flags.DEFINE_string('heatmap_output_dir', '../result/oxford-test-result/heatmaps_resnet_v1_50_dice_multi_beta_1_alpha_p1_weighted_fusion/', '')
 tf.app.flags.DEFINE_bool('no_write_images', True, 'do not write images')
 
-import resnet_v1_model_dice_multi_beta_1_weighted_fusion as model
-from oxford_R01 import restore_rectangle
+import resnet_v1_model_dice_multi_weighted_fusion as model
+from oxford import restore_rectangle
 
 FLAGS = tf.app.flags.FLAGS
 CKPT_PATH = None#'../model/hand_resnet_v1_50_dice_multi_oxford_aug_rbox/model.ckpt-98051'#

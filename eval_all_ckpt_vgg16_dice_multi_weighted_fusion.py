@@ -16,7 +16,7 @@ tf.app.flags.DEFINE_string('heatmap_output_dir', '../result/oxford-test-result/h
 tf.app.flags.DEFINE_bool('no_write_images', True, 'do not write images')
 
 import vgg16_model_dice_multi_weighted_fusion as model
-from oxford_R01 import restore_rectangle
+from oxford import restore_rectangle
 
 FLAGS = tf.app.flags.FLAGS
 CKPT_PATH = None#'../model/hand_vgg16_dice_multi_rbox_R01_oxford/model.ckpt-82042'
