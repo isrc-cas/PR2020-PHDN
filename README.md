@@ -35,8 +35,9 @@ Decription of files
 Installation
 ------
 Tensorflow > 1.0  
-python3
-python packages:
+python3  
+python packages:  
+
     numpy
     shapely
     opencv-python
