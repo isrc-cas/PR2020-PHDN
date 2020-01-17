@@ -8,7 +8,15 @@ A Pixel-wise Hand Detection Network (PHDN) trained in an end-to-end fashion is p
 ### Citation
 If you use our code or models, please cite our paper.  
 
-    @
+    @article{LIU2020107202,
+        author = "Dan Liu and Libo Zhang and Tiejian Luo and Lili Tao and Yanjun Wu",
+        title = "Towards Interpretable and Robust Hand Detection via Pixel-wise Prediction",
+        journal = "Pattern Recognition",
+        pages = "107202",
+        year = "2020",
+        issn = "0031-3203",
+        doi = "https://doi.org/10.1016/j.patcog.2020.107202"
+        }
 
 Decription of files
 -----
